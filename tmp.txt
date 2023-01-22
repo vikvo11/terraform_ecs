@@ -1,0 +1,10 @@
+resource "aws_vpc" "example"
+resource "aws_subnet" "example" 
+resource "aws_internet_gateway" "internet_gateway"
+resource "aws_route_table" "public"
+resource "aws_route_table_association" "route_table_association"
+
+
+terraform apply -target=aws_vpc.example -target=aws_subnet.example -target=aws_internet_gateway.internet_gateway -target=aws_route_table.public -target=aws_route_table_association.route_table_association
+
+terraform plan -target module.glue.autoscaling.aws_launch_configuration.foo -target module.glue.autoscaling.aws_autoscaling_group.bar
